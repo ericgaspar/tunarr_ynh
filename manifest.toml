@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "tunarr"
 name = "Tunarr"
-description.en = "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)"
-description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+description.en = "Create live TV channels from media"
+description.fr = "Créer des chaînes de télévision en direct à partir de médias"
 
 version = "0.22.17~ynh1"
 
@@ -15,8 +15,7 @@ maintainers = ["eric_G"]
 license = "free"
 website = "https://tunarr.com/"
 demo = "https://demo.example.com"
-admindoc = "https://yunohost.org/packaging_apps"
-userdoc = "https://yunohost.org/apps"
+admindoc = "https://tunarr.com/"
 code = "https://github.com/chrisbenincasa/tunarr"
 
 [integration]
@@ -56,6 +55,12 @@ ram.runtime = "50M"
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = ".*\\-linux-x64"
     autoupdate.asset.arm64 = ".*\\-linux-arm64"
+
+    [resources.sources.ffmpeg]
+    amd64.url = "https://github.com/ErsatzTV/ErsatzTV-ffmpeg/releases/download/7.1.1/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz"
+    amd64.sha256 = "ffe261a2099629964231038dd4280ecc640b9cecc236253ee462d5a5232c3cac"
+    arm64.url = "https://github.com/ErsatzTV/ErsatzTV-ffmpeg/releases/download/7.1.1/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz"
+    arm64.sha256 = "3c9858be9f06becc7f9c6088b19b8d6348c74dc23fe0df9113a54570d49de817"
 
     [resources.system_user]
 
